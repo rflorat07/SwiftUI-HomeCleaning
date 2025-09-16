@@ -1,0 +1,17 @@
+# File di sistema macOS
+.DS_Store
+
+# File utente e di stato di Xcode
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcshareddata/
+
+# Cartelle di Build e Cache
+build/
+DerivedData/
+Previews/
+
+# Dipendenze
+Pods/
+Carthage/
+.build/
