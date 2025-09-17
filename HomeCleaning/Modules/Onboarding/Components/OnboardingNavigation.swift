@@ -9,15 +9,15 @@ import SwiftUI
 
 struct OnboardingNavigation: View {
     
-    @Binding var currentTab: Int
+    @Binding var currentPage: Int
     
     let count: Int
     
     var body: some View {
         HStack {
-            if currentTab > 0 {
+            if currentPage > 0 {
                 CircleButtonView(fillColor: .white, strokeColor: .mainGreen, iconName: "arrow.left", iconColor: .mainGreen)
-                    .onTapGesture { currentTab -= 1 }
+                    .onTapGesture { currentPage -= 1 }
             } else {
                 Circle()
                     .fill(.white)
@@ -27,16 +27,16 @@ struct OnboardingNavigation: View {
             
             Spacer()
             
-            OnboardingDotNavigation(currentDot: $currentTab, count: count)
+            OnboardingDotNavigation(currentDot: $currentPage, count: count)
             
             Spacer()
             
             CircleButtonView()
                 .onTapGesture {
-                    if currentTab == count - 1 {
+                    if currentPage == count - 1 {
                         /// LoginScreen
                     } else {
-                        currentTab += 1
+                        currentPage += 1
                     }
                 }
         }
@@ -44,6 +44,6 @@ struct OnboardingNavigation: View {
 }
 
 #Preview {
-    OnboardingNavigation(currentTab: .constant(1), count: 3)
+    OnboardingNavigation(currentPage: .constant(1), count: 3)
         .padding(24)
 }

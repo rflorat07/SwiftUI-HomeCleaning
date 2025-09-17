@@ -11,16 +11,14 @@ struct OnboardingSlideView: View {
     
     @State private var isAnimating = false
     
-    let image: String
-    let title: [String]
-    let subtitle: String
+    let page: Onboarding
     let screenHeight = UIScreen.main.bounds.height
     
     var body: some View {
         
         VStack(alignment: .center, spacing: 24) {
             
-            Image(image)
+            Image(page.image)
                 .resizable()
                 .scaledToFit()
                 .frame(height: screenHeight * 0.45)
@@ -28,20 +26,20 @@ struct OnboardingSlideView: View {
                 .opacity(isAnimating ? 1 : 0)
             
             Group {
-                Text(title[0])
+                Text(page.title[0])
                     .foregroundStyle(.mainBlack)
                 +
-                Text(title[1])
+                Text(page.title[1])
                     .foregroundStyle(.mainGreen)
                 +
-                Text(title[2])
+                Text(page.title[2])
                     .foregroundStyle(.mainBlack)
             }
             .multilineTextAlignment(.center)
             .font(.inter(fontWeight: .semibold, fontStyle: .title))
             .opacity(isAnimating ? 1 : 0)
             
-            Text(subtitle)
+            Text(page.subtitle)
                 .font(.inter(fontStyle: .callout))
                 .foregroundStyle(.secondaryBlack)
                 .multilineTextAlignment(.center)
@@ -59,13 +57,15 @@ struct OnboardingSlideView: View {
 
 
 #Preview {
-    OnboardingSlideView(
-        image: "onboarding_1",
+    OnboardingSlideView(page: Onboarding(
         title: [
             "Explore ",
             "Professional Services ",
             "Provider"
         ],
-        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
+        image: "onboarding_1"
+        )
     )
 }
+
