@@ -12,6 +12,15 @@
         }
       }
     },
+    "Create an account" : {
+
+    },
+    "Don't have an account?" : {
+
+    },
+    "Forgot your password?" : {
+
+    },
     "letsFind" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -77,6 +86,15 @@
           }
         }
       }
+    },
+    "Sign In" : {
+
+    },
+    "Sign Up" : {
+
+    },
+    "Skip" : {
+
     },
     "skipLabel" : {
       "extractionState" : "manual",

@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingNavigation: View {
     
     @Binding var currentPage: Int
+    @Binding var isShowingSignIn: Bool
     
     let count: Int
     
@@ -34,7 +35,7 @@ struct OnboardingNavigation: View {
             CircleButtonView()
                 .onTapGesture {
                     if currentPage == count - 1 {
-                        /// LoginScreen
+                        isShowingSignIn = true
                     } else {
                         currentPage += 1
                     }
@@ -44,6 +45,6 @@ struct OnboardingNavigation: View {
 }
 
 #Preview {
-    OnboardingNavigation(currentPage: .constant(1), count: 3)
+    OnboardingNavigation(currentPage: .constant(1), isShowingSignIn: .constant(false), count: 3)
         .padding(24)
 }

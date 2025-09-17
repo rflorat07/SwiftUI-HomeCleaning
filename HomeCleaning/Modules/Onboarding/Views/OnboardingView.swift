@@ -10,34 +10,39 @@ import SwiftUI
 struct OnboardingView: View {
     
     @State private var currentPage = 0
-    
+    @State private var isShowingSignIn = false
     @ObservedObject private var viewModel = OnboardingViewModel()
     
     var body: some View {
-        VStack(alignment: .center, spacing: 32) {
-            
-            Text("Skip")
-                .font(.inter(fontStyle: .body))
-                .foregroundStyle(.mainGreen,)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.horizontal, 24)
-            
-            TabView(selection: $currentPage) {
-                ForEach(0..<viewModel.onboardingPages.count, id: \.self) { index in
-                    OnboardingSlideView(page: viewModel.onboardingPages[index])
-                    .tag(index)
-                    .transition(.slide)
+        NavigationStack {
+            VStack(alignment: .center, spacing: 32) {
+                
+                Text("Skip")
+                    .font(.inter(fontStyle: .body))
+                    .foregroundStyle(.mainGreen,)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.horizontal, 24)
+                
+                TabView(selection: $currentPage) {
+                    ForEach(0..<viewModel.onboardingPages.count, id: \.self) { index in
+                        OnboardingSlideView(page: viewModel.onboardingPages[index])
+                            .tag(index)
+                            .transition(.slide)
+                    }
                 }
-            }
-            .tabViewStyle(.page(indexDisplayMode: .always))
-            .animation(.default, value: currentPage)
+                .tabViewStyle(.page(indexDisplayMode: .always))
+                .animation(.default, value: currentPage)
+                
+                OnboardingNavigation(currentPage: $currentPage, isShowingSignIn: $isShowingSignIn, count: viewModel.onboardingPages.count)
+                    .padding(.horizontal, 24)
+                
+                
+                Spacer()
+                
+            } // VStack
+            .navigationDestination(isPresented: $isShowingSignIn) { SignInView() }
             
-            OnboardingNavigation(currentPage: $currentPage, count: viewModel.onboardingPages.count)
-                .padding(.horizontal, 24)
-            
-            
-            Spacer()
-        }
+        } // NavigationStack
     }
 }
 
