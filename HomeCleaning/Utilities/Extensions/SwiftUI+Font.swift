@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Font {
-    static func inter(fontStyle: Font.TextStyle = .body, fontWeight: Font.Weight = .regular) -> Font {
+    static func inter(fontWeight: Font.Weight = .regular, fontStyle: Font.TextStyle = .body) -> Font {
         return Font.custom(CustomFont(weight: fontWeight).rawValue, size: fontStyle.size)
     }
 }
