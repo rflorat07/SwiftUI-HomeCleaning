@@ -17,8 +17,16 @@ struct OnboardingNavigation: View {
     var body: some View {
         HStack {
             if currentPage > 0 {
-                CircleButtonView(fillColor: .white, strokeColor: .mainGreen, iconName: "arrow.left", iconColor: .mainGreen)
-                    .onTapGesture { currentPage -= 1 }
+                CircleButtonView(
+                    fillColor: .white,
+                    strokeColor: .mainGreen,
+                    iconName: "arrow.left",
+                    iconColor: .mainGreen,
+                    onCircleButtonTapped: {
+                        currentPage -= 1
+                    }
+                )
+
             } else {
                 Circle()
                     .fill(.white)
@@ -32,14 +40,13 @@ struct OnboardingNavigation: View {
             
             Spacer()
             
-            CircleButtonView()
-                .onTapGesture {
-                    if currentPage == count - 1 {
-                        isShowingSignIn = true
-                    } else {
-                        currentPage += 1
-                    }
+            CircleButtonView() {
+                if currentPage == count - 1 {
+                    isShowingSignIn = true
+                } else {
+                    currentPage += 1
                 }
+            }
         }
     }
 }

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-    @State private var currentPage = 0
-    @State private var isShowingSignIn = false
     @ObservedObject private var viewModel = OnboardingViewModel()
     
     var body: some View {
@@ -23,10 +21,10 @@ struct OnboardingView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.horizontal, 24)
                     .onTapGesture {
-                        isShowingSignIn = true
+                        viewModel.isShowingSignIn = true
                     }
                 
-                TabView(selection: $currentPage) {
+                TabView(selection: $viewModel.currentPage) {
                     ForEach(0..<viewModel.onboardingPages.count, id: \.self) { index in
                         OnboardingSlideView(page: viewModel.onboardingPages[index])
                             .tag(index)
@@ -34,17 +32,24 @@ struct OnboardingView: View {
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
-                .animation(.default, value: currentPage)
+                .animation(.default, value: viewModel.currentPage)
                 
-                OnboardingNavigation(currentPage: $currentPage, isShowingSignIn: $isShowingSignIn, count: viewModel.onboardingPages.count)
-                    .padding(.horizontal, 24)
+                OnboardingNavigation(
+                    currentPage: $viewModel.currentPage,
+                    isShowingSignIn: $viewModel.isShowingSignIn,
+                    count: viewModel.onboardingPages.count
+                )
+                .padding(.horizontal, 24)
                 
                 
                 Spacer()
                 
             } // VStack
             .navigationBarBackButtonHidden(true)
-            .navigationDestination(isPresented: $isShowingSignIn) { SignInView() }
+            .navigationDestination(
+                isPresented: $viewModel.isShowingSignIn) {
+                    SignInView()
+                }
             
         } // NavigationStack
     }

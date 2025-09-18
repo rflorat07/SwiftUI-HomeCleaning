@@ -15,6 +15,7 @@ struct CircleButtonView: View {
     var strokeWidth: CGFloat = 0.99   // Spessore del bordo
     var iconName: String = "arrow.right" // Nome dell'icona SF Symbols
     var iconColor: Color = .white   // Colore dell'icona
+    var onCircleButtonTapped: (() -> Void)?
 
     var body: some View {
         ZStack {
@@ -34,6 +35,9 @@ struct CircleButtonView: View {
                 .scaledToFit()
                 .frame(width: circleSize * 0.35, height: circleSize * 0.35) // Dimensione dell'icona (es. 50% del cerchio)
                 .foregroundColor(iconColor) // Colore dell'icona
+        }
+        .onTapGesture {
+            onCircleButtonTapped?()
         }
     }
 }

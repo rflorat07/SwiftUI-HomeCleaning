@@ -17,7 +17,7 @@ final class CreateAccountViewModel: ObservableObject {
     @Published var errorMessage: String?
     
     func signUp() {
-        print("Signing in...")
+        print("Sign Up in...")
     }
             
 }

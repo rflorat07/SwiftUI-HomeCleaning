@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Agree with" : {
+
+    },
     "Already have an account?" : {
 
     },
@@ -106,6 +109,9 @@
           }
         }
       }
+    },
+    "Terms & Conditions" : {
+
     },
     "welcomeButton" : {
       "extractionState" : "manual",

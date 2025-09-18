@@ -8,7 +8,10 @@
 import Foundation
 
 final class OnboardingViewModel: ObservableObject {
-    @Published var onboardingPages: [Onboarding]
+    
+    @Published var currentPage = 0
+    @Published var isShowingSignIn = false
+    @Published var onboardingPages: [Onboarding] = []
     
     init() {
         onboardingPages =        [
