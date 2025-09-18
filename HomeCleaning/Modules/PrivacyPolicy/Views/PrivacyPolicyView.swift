@@ -15,29 +15,8 @@ struct PrivacyPolicyView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                CircleButtonView(
-                    circleSize: 40,
-                    fillColor: .white,
-                    strokeColor: .stroke,
-                    iconName: "arrow.left",
-                    iconColor: .mainBlack,
-                    onCircleButtonTapped: {
-                        dismiss()
-                    }
-                )
-                
-                Spacer()
-                
-                Text("Privacy Policy")
-                    .font(.inter(fontWeight: .medium, fontStyle: .body))
-                    .foregroundColor(.mainBlack)
-                    .padding(.trailing, 40)
-                
-                Spacer()
-                
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            NavigationBackButton(title: "Privacy Policy")
             
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 8) {

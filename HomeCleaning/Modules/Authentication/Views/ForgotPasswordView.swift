@@ -16,16 +16,7 @@ struct ForgotPasswordView: View {
         ScrollView {
             VStack(spacing: 32) {
                 
-                CircleButtonView(
-                    circleSize: 40,
-                    fillColor: .white,
-                    strokeColor: .stroke,
-                    iconName: "arrow.left",
-                    iconColor: .mainBlack,
-                ) {
-                    dismiss()
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                NavigationBackButton()
  
                 CustomHeaderView(
                     title: "Forgot your password?",
