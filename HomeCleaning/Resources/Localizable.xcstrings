@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Already have an account?" : {
+
+    },
     "alreadyAccount" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11,9 +14,6 @@
           }
         }
       }
-    },
-    "Create an account" : {
-
     },
     "Don't have an account?" : {
 

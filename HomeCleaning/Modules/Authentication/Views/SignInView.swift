@@ -12,64 +12,63 @@ struct SignInView: View {
     @StateObject private var viewModel = SigninViewModel()
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 32) {
-                
-                CustomHeaderView(
-                    title: "Sign In",
-                    subTitle: "Hi! Welcome back, you’ve been missed"
-                )
-                
-                VStack(alignment: .leading, spacing: 12) {
+            NavigationStack {
+                VStack(spacing: 32) {
                     
-                    FloatingTextField(text: $viewModel.email, labelText: "Email")
+                    CustomHeaderView(
+                        title: "Sign In",
+                        subTitle: "Hi! Welcome back, you’ve been missed"
+                    )
                     
-                    FloatingSecureField(text: $viewModel.password, labelText: "Password")
-                    
-                    NavigationLink(destination: Text("Forgot your password?")) {
-                        Text("Forgot your password?")
-                            .underline()
-                            .font(.inter(fontWeight: .medium, fontStyle: .footnote))
-                            .foregroundColor(.mainGreen)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    VStack(alignment: .leading, spacing: 12) {
+                        
+                        FloatingTextField(text: $viewModel.email, labelText: "Email", keyboardType: .emailAddress)
+                        
+                        FloatingSecureField(text: $viewModel.password, labelText: "Password")
+                        
+                        NavigationLink(destination: Text("Forgot your password?")) {
+                            Text("Forgot your password?")
+                                .underline()
+                                .font(.inter(fontWeight: .medium, fontStyle: .footnote))
+                                .foregroundColor(.mainGreen)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                        }
                     }
-                }
-                
-                
-                Button {
-                    viewModel.signIn()
-                } label: {
-                    Text("Sign In")
-                        .withDefaultButtonFormatting()
-                }
-                
-                TextDividerView(text: "Or sign in with")
-                
-                HStack(alignment: .center, spacing: 12) {
-                    CircleButtonView(circleSize: 60, fillColor: .white, strokeColor: .stroke, iconName: "apple.logo", iconColor: .black )
                     
-                    CircleButtonView(circleSize: 60, fillColor: .white, strokeColor: .stroke, iconName: "apple.logo", iconColor: .black )
                     
-                    CircleButtonView(circleSize: 60, fillColor: .white, strokeColor: .stroke, iconName: "apple.logo", iconColor: .black )
-                }
-                
-                HStack() {
-                    Text("Don't have an account?")
-                        .font(.inter(fontStyle: .footnote))
-                        .foregroundColor(.mainBlack)
-                    
-                    NavigationLink(destination: Text("Create an account")) {
-                        Text("Sign Up")
-                            .font(.inter(fontWeight: .medium, fontStyle: .footnote))
-                            .foregroundColor(.mainGreen)
-                            .underline()
+                    DefaultButton(title: "Sign In") {
+                        viewModel.signIn()
                     }
+                    
+                    
+                    TextDividerView(text: "Or sign in with")
+                    
+                    HStack(alignment: .center, spacing: 12) {
+                        
+                        CircleImageView(imageName: "apple-icon")
+                        
+                        CircleImageView(imageName: "google-icon")
+                        
+                        CircleImageView(imageName: "facebook-icon")
+                    }
+                    
+                    HStack() {
+                        Text("Don't have an account?")
+                            .font(.inter(fontStyle: .footnote))
+                            .foregroundColor(.mainBlack)
+                        
+                        NavigationLink(destination: CreateAccountView()) {
+                            Text("Sign Up")
+                                .font(.inter(fontWeight: .medium, fontStyle: .footnote))
+                                .foregroundColor(.mainGreen)
+                                .underline()
+                        }
+                    }
+                    
                 }
-                
+                .padding(24)
+                .navigationBarBackButtonHidden(true)
             }
-            .padding(24)
-            .navigationBarBackButtonHidden(true)
-        }
     }
 }
 

@@ -16,6 +16,7 @@ struct FloatingTextField: View {
     var rightIcon: String? = nil
     var placeHolderText: String? = nil
     var textFieldHeight: CGFloat? = 42
+    var keyboardType: UIKeyboardType = .default
     var onRightIconPressed: (() -> Void)? = nil
     var onLeftIconPressed: (() -> Void)? = nil
 
@@ -39,6 +40,7 @@ struct FloatingTextField: View {
                 }
                 
                 TextField(placeHolderText ?? "", text: $text)
+                    .keyboardType(keyboardType)
                     .font(.inter(fontStyle: .footnote))
                     .accentColor(.mainBlack)
                     .frame(height: textFieldHeight, alignment: .leading)

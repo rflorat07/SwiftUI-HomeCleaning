@@ -22,6 +22,9 @@ struct OnboardingView: View {
                     .foregroundStyle(.mainGreen,)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.horizontal, 24)
+                    .onTapGesture {
+                        isShowingSignIn = true
+                    }
                 
                 TabView(selection: $currentPage) {
                     ForEach(0..<viewModel.onboardingPages.count, id: \.self) { index in
@@ -40,6 +43,7 @@ struct OnboardingView: View {
                 Spacer()
                 
             } // VStack
+            .navigationBarBackButtonHidden(true)
             .navigationDestination(isPresented: $isShowingSignIn) { SignInView() }
             
         } // NavigationStack

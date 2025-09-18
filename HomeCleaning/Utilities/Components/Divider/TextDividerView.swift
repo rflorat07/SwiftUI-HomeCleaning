@@ -17,7 +17,7 @@ struct TextDividerView: View {
             
             Rectangle()
                 .fill(.black.opacity(0.1))
-                .frame(width: .infinity, height: 1)
+                .frame(height: 1)
             
             Text(text)
                 .font(.inter(fontStyle: .footnote))
@@ -25,7 +25,7 @@ struct TextDividerView: View {
             
             Rectangle()
                 .fill(.black.opacity(0.1))
-                .frame(width: .infinity, height: 1)
+                .frame(height: 1)
         }
         .padding(.horizontal, 32)
     }
