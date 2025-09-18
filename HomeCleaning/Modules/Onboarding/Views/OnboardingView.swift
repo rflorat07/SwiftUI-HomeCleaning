@@ -12,7 +12,6 @@ struct OnboardingView: View {
     @ObservedObject private var viewModel = OnboardingViewModel()
     
     var body: some View {
-        NavigationStack {
             VStack(alignment: .center, spacing: 32) {
                 
                 Text("Skip")
@@ -46,12 +45,9 @@ struct OnboardingView: View {
                 
             } // VStack
             .navigationBarBackButtonHidden(true)
-            .navigationDestination(
-                isPresented: $viewModel.isShowingSignIn) {
+            .navigationDestination(isPresented: $viewModel.isShowingSignIn) {
                     SignInView()
                 }
-            
-        } // NavigationStack
     }
 }
 

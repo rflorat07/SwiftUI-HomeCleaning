@@ -11,10 +11,7 @@ struct WelcomeView: View {
     
     @State private var isShowingOnboarding = false
     
-    var body: some View {
-        
-        NavigationStack {
-            
+    var body: some View {            
             VStack(spacing: 35) {
                 
                 Image("welcome-header")
@@ -65,8 +62,6 @@ struct WelcomeView: View {
             .navigationDestination(isPresented: $isShowingOnboarding) {
                 OnboardingView()
             }
-            
-        }// NavigationStack
     }
 }
 

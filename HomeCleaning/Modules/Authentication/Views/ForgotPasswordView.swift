@@ -1,5 +1,5 @@
 //
-//  NewPasswordView.swift
+//  ForgotPasswordView.swift
 //  HomeCleaning
 //
 //  Created by Roger Florat Gutierrez on 18/09/25.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct NewPasswordView: View {
+struct ForgotPasswordView: View {
     @Environment(\.dismiss) var dismiss
     
-    @StateObject private var viewModel = NewPasswordViewModel()
+    @StateObject private var viewModel = ForgotPasswordViewModel()
     
     var body: some View {
         ScrollView {
@@ -28,20 +28,15 @@ struct NewPasswordView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
  
                 CustomHeaderView(
-                    title: "New Password",
-                    subTitle: "Your new password must be different from previously used passwords."
+                    title: "Forgot your password?",
+                    subTitle: "Don\'t worry sometimes people can forget too, enter your email and we will send you a password reset link."
                 )
                 
-                VStack(alignment: .leading, spacing: 19) {
-                    
-                    FloatingSecureField(text: $viewModel.password, labelText: "Password")
-                    
-                    FloatingSecureField(text: $viewModel.confirmPassword, labelText: "Confirm Password")
-                }
+                FloatingTextField(text: $viewModel.email, labelText: "Email", keyboardType: .emailAddress)
                 
                 
-                DefaultButton(title: "Create New Password") {
-                    viewModel.createNewPassword()
+                DefaultButton(title: "Submit") {
+                    viewModel.forgotPasswordSubmit()
                 }
                 
             }
@@ -54,5 +49,5 @@ struct NewPasswordView: View {
 }
 
 #Preview {
-    NewPasswordView()
+    ForgotPasswordView()
 }

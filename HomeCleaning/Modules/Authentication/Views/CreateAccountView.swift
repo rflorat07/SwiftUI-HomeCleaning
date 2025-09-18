@@ -13,7 +13,6 @@ struct CreateAccountView: View {
     @StateObject private var viewModel = CreateAccountViewModel()
     
     var body: some View {
-        NavigationStack {
             ScrollView {
                 VStack(spacing: 32) {
                     
@@ -47,7 +46,7 @@ struct CreateAccountView: View {
                             Text("Agree with")
                                 .font(.inter(fontStyle: .callout))
                             
-                            NavigationLink(destination: Text("Terms & Conditions")) {
+                            NavigationLink(destination: PrivacyPolicyView()) {
                                 Text("Terms & Conditions")
                                     .underline()
                                     .font(.inter(fontWeight: .medium, fontStyle: .callout))
@@ -93,7 +92,6 @@ struct CreateAccountView: View {
                 
             } // ScrollView
             .scrollBounceBehavior(.basedOnSize)
-        }
     }
 }
 

@@ -12,7 +12,6 @@ struct SignInView: View {
     @StateObject private var viewModel = SigninViewModel()
     
     var body: some View {
-            NavigationStack {
                 ScrollView {
                     VStack(spacing: 32) {
                         
@@ -27,7 +26,7 @@ struct SignInView: View {
                             
                             FloatingSecureField(text: $viewModel.password, labelText: "Password")
                             
-                            NavigationLink(destination: Text("Forgot your password?")) {
+                            NavigationLink(destination: ForgotPasswordView()) {
                                 Text("Forgot your password?")
                                     .underline()
                                     .font(.inter(fontWeight: .medium, fontStyle: .footnote))
@@ -73,8 +72,9 @@ struct SignInView: View {
                 .scrollBounceBehavior(.basedOnSize)
             }
     }
-}
 
 #Preview {
-    SignInView()
+    NavigationStack {
+        SignInView()
+    }
 }
