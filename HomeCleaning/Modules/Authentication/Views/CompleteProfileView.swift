@@ -26,45 +26,17 @@ struct CompleteProfileView: View {
                 CircleProfileImageView()
                 
                 VStack(alignment: .leading, spacing: 19) {
+                    
                     FloatingTextField(text: $viewModel.name, labelText: "Name")
                     
-                    FloatingTextField(text: $viewModel.phoneNumber, labelText: "Phone Number", placeHolderText: "Enter Phone Number", keyboardType: .numberPad)
+                    FloatingTextField(
+                        text: $viewModel.phoneNumber,
+                        labelText: "Phone Number",
+                        placeHolderText: "Enter Phone Number",
+                        keyboardType: .numberPad
+                    )
                     
-                    
-                    VStack(alignment: .leading, spacing: 6) {
-                        
-                        Text("Gender")
-                            .font(.inter(fontStyle: .footnote))
-                            .foregroundStyle(.mainBlack)
-                        
-                        Menu {
-                            ForEach(Gender.allCases) { gender in
-                                Button(action: {
-                                    self.viewModel.selectedGender = gender
-                                }) {
-                                    Text(gender.rawValue)
-                                }
-                            }
-                        } label: {
-                            HStack {
-                                Text(viewModel.selectedGender.rawValue)
-                                    .font(.inter(fontStyle: .footnote))
-                                    .foregroundColor(.mainBlack)
-                                
-                                Spacer()
-                                
-                                Image(systemName: "chevron.down")
-                                    .foregroundColor(.secondary)
-                            }
-                            .frame(height: 42)
-                            .frame(maxWidth: .infinity)
-                            .padding(.horizontal, 14)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(.stroke, lineWidth: 0.99)
-                            )
-                        }
-                    }
+                    FloatingMenuField(labelText: "Gender", selectedGender: $viewModel.selectedGender)
                     
                 }
                 

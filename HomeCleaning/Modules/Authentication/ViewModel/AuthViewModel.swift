@@ -1,5 +1,5 @@
 //
-//  SigninViewModel.swift
+//  AuthViewModel.swift
 //  HomeCleaning
 //
 //  Created by Roger Florat Gutierrez on 17/09/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SigninViewModel: ObservableObject {
+final class AuthViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var isLoading = false
@@ -15,6 +15,7 @@ final class SigninViewModel: ObservableObject {
     @Published var errorMessage: String?
     
     func signIn() {
+        self.isAuthenticated = true
         print("Signing in...")
     }
     

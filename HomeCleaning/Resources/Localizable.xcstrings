@@ -21,7 +21,16 @@
     "Don't have an account?" : {
 
     },
+    "Enable Notification Access" : {
+
+    },
+    "Enable notifications to receive real-time updates." : {
+
+    },
     "Forgot your password?" : {
+
+    },
+    "Home" : {
 
     },
     "letsFind" : {
@@ -57,6 +66,9 @@
         }
       }
     },
+    "Maybe Later" : {
+
+    },
     "onBoardingTitle1" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -67,9 +79,6 @@
           }
         }
       }
-    },
-    "Privacy Policy" : {
-
     },
     "professionalCleaningRepair" : {
       "extractionState" : "manual",
@@ -116,6 +125,9 @@
     "Terms & Conditions" : {
 
     },
+    "To Find Nearby Service Provider." : {
+
+    },
     "welcomeButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -126,6 +138,9 @@
           }
         }
       }
+    },
+    "What is Your Location?" : {
+
     }
   },
   "version" : "1.0"

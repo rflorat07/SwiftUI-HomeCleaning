@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @StateObject private var viewModel = SigninViewModel()
+    @StateObject private var viewModel = AuthViewModel()
     
     var body: some View {
                 ScrollView {
@@ -68,6 +68,10 @@ struct SignInView: View {
                     }
                     .padding(24)
                     .navigationBarBackButtonHidden(true)
+                    .navigationDestination(isPresented: $viewModel.isAuthenticated) {
+                        LocationView()
+                    }
+                    
                 }// ScrollView
                 .scrollBounceBehavior(.basedOnSize)
             }
