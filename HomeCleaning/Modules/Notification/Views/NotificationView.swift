@@ -31,7 +31,7 @@ struct NotificationView: View {
             
             DefaultButton(title: "Allow Notification", onButtonTapped: nil)
             
-            NavigationLink(destination: Text("Home")) {
+            NavigationLink(destination: HomeView()) {
                 Text("Maybe Later")
                     .font(.inter(fontWeight: .medium, fontStyle: .body))
                     .foregroundColor(.mainGreen)
