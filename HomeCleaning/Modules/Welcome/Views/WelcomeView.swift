@@ -23,13 +23,13 @@ struct WelcomeView: View {
                 VStack(spacing: 24) {
                     Group {
                         Text("letsFind")
-                            .foregroundStyle(.mainBlack)
+                            .foregroundColor(.mainBlack)
                         +
                         Text("professionalCleaningRepair")
-                            .foregroundStyle(.mainGreen)
+                            .foregroundColor(.mainGreen)
                         +
                         Text("service")
-                            .foregroundStyle(.mainBlack)
+                            .foregroundColor(.mainBlack)
                     }
                     .font(.inter(fontWeight: .semibold, fontStyle: .title))
                     

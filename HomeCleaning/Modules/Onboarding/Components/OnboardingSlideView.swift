@@ -27,13 +27,13 @@ struct OnboardingSlideView: View {
             
             Group {
                 Text(page.title[0])
-                    .foregroundStyle(.mainBlack)
+                    .foregroundColor(.mainBlack)
                 +
                 Text(page.title[1])
-                    .foregroundStyle(.mainGreen)
+                    .foregroundColor(.mainGreen)
                 +
                 Text(page.title[2])
-                    .foregroundStyle(.mainBlack)
+                    .foregroundColor(.mainBlack)
             }
             .multilineTextAlignment(.center)
             .font(.inter(fontWeight: .semibold, fontStyle: .title))

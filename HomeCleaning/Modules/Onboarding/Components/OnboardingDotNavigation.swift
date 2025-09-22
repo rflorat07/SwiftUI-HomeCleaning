@@ -19,7 +19,7 @@ struct OnboardingDotNavigation: View {
     var dotColor: Color = .mainGreen
     var activeDotColor: Color = .mainGreen
     
-    var body: some View {
+    var body: some View {        
         HStack{
             ForEach(0..<count, id: \.self) { index in
                 Circle()

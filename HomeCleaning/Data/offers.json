@@ -1,0 +1,52 @@
+[
+    {
+      "title": "Get Special Offer",
+      "offer": "Limited time!",
+      "discount": "40",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Offers%2Foffer_ac_repairing.jpg?alt=media&token=cd5df4e3-0915-4168-9521-9381a03c608f",
+      "services": "All Services Available | T&C Applied",
+      "cta": "Claim",
+      "upTo": "upTo",
+      "id": "1"
+    },
+    {
+      "title": "Get Special Offer",
+      "offer": "Festival Offer",
+      "discount": "50",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Offers%2Foffer_painting_services.jpg?alt=media&token=720d0ec1-919c-4229-af44-607f3cf60efb",
+      "services": "Painter Services Available | T&C Applied",
+      "cta": "Claim",
+      "upTo": "upTo",
+      "id": "2"
+    },
+    {
+      "title": "Get Special Offer",
+      "offer": "Bank Offer",
+      "discount": "20",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Offers%2Foffer_car_repairing.jpg?alt=media&token=f033f7de-ed7b-47b6-80e6-cb358b86a379",
+      "services": "Car Repair Services Available | T&C Applied",
+      "cta": "Claim",
+      "upTo": "upTo",
+      "id": "3"
+    },
+    {
+      "title": "Get Special Offer",
+      "offer": "Special Offers",
+      "discount": "30",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Offers%2Foffer_electrician.jpg?alt=media&token=1a727d1e-61f2-4800-b3af-17557f5d23ff",
+      "services":"Electrician Services Available | T&C Applied",
+      "cta": "Claim",
+      "upTo": "upTo",
+      "id": "4"
+    },
+    {
+      "title": "Get Special Offer",
+      "offer": "Festival Offer",
+      "discount": "45",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Offers%2Foffer_iron.jpg?alt=media&token=099af8de-4178-4e98-9c2d-157856da427b",
+      "services": "Iron Services Available | T&C Applied",
+      "cta": "Claim",
+      "upTo": "upTo",
+      "id": "5"
+    }
+]

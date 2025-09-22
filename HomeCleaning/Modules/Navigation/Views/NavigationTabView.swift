@@ -68,6 +68,7 @@ struct NavigationTabView: View {
         } // TabWiew
         .accentColor(.mainGreen)
         .tabBarStrokeColor(.stroke)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
