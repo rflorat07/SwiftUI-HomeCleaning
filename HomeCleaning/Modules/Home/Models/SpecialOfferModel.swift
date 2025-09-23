@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SpecialOffer: Identifiable, Codable {
+struct SpecialOffer: Hashable, Codable {
     let id: String
     let title: String
     let offer: String

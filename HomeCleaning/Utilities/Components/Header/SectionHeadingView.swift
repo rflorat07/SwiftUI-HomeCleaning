@@ -15,13 +15,13 @@ struct SectionHeadingView: View {
     
     var body: some View {
         HStack {
-            Text("#SpecialForYou")
+            Text(title)
                 .font(.inter(fontWeight: .medium, fontStyle: .headline))
                 .foregroundColor(.salonBlack)
             
             Spacer()
             
-            Text("See All")
+            Text(buttonTitle)
                 .font(.inter(fontStyle: .footnote))
                 .foregroundColor(.mainGreen)
                 .onTapGesture {

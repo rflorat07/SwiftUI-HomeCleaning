@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "icon": "cleaning",
+        "label": "Cleaning"
+    },
+    {
+        "id": "2",
+        "icon": "repairing",
+        "label": "Repairing"
+    },
+    {
+        "id": "3",
+        "icon": "plumbing",
+        "label": "Plumbing"
+    },
+    {
+        "id": "4",
+        "icon": "shifting",
+        "label": "Shifting"
+    },
+    {
+        "id": "5",
+        "icon": "painting",
+        "label": "Painting"
+    },
+    {
+        "id": "6",
+        "icon": "laundry",
+        "label": "Laundry"
+    },
+    {
+        "id": "7",
+        "icon": "acRepair",
+        "label": "AC Repairing"
+    }
+    
+]

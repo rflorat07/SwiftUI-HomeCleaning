@@ -28,6 +28,8 @@ struct SpecialOfferCarouselView: View {
             OnboardingDotNavigation(currentDot: $viewModel.currentPage, count: viewModel.specialOffers.count)
             
         }
+        .frame(height: 246)
+        .padding(.top, 24)
     }
 }
 
