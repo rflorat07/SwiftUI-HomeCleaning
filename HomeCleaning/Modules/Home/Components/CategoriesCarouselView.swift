@@ -12,7 +12,7 @@ struct CategoriesCarouselView: View {
     @ObservedObject var viewModel = CategoriesCarouselViewModel()
     
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 12) {
             SectionHeadingView(title: "Categories", buttonTitle: "See all")
                 .padding(.horizontal, 24)
             

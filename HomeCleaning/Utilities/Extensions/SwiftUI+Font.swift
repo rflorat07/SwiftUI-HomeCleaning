@@ -28,7 +28,7 @@ extension Font.TextStyle {
         case .headline:
             return 18
         case .subheadline:
-            return 17
+            return 15
         case .body:
             return 16
         case .callout:

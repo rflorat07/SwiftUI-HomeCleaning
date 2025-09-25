@@ -20,6 +20,8 @@ struct HomeView: View {
                         SpecialOfferCarouselView()
                         
                         CategoriesCarouselView()
+                        
+                        PopularServicesCarouselView()
                     }
                 }
                 
